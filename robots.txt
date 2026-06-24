@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://expertia-oi.com/sitemap.xml
