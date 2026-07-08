@@ -231,108 +231,58 @@
 <div id="etape-2" style="border-top:1px solid var(--line); background:var(--paper-dim);">
   <div class="wrap" style="padding-top:4rem; padding-bottom:5rem;">
     <div class="step-label">Étape 2 sur 3</div>
-    <p class="eyebrow" style="margin-top:0.3rem;">Cahier des charges · Fonctionnel &amp; technique</p>
+    <p class="eyebrow" style="margin-top:0.3rem;">Cahier des charges · Vue d'ensemble</p>
     <h2 style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-top:1rem; max-width:620px;">
-      Définir précisément ce qu'on construit, pour qui, et comment.
+      5 blocs fonctionnels pour construire le bon outil.
     </h2>
+    <p style="margin-top:0.9rem; font-size:0.95rem; color:var(--slate); max-width:580px; line-height:1.65;">
+      E-commerce click &amp; collect avec deux profils clients (B2B / B2C), catalogue structuré, commande Drive, administration et reporting — tout est spécifié avant de coder.
+    </p>
 
-    <div class="pbl">
-      <p><span>Périmètre —</span> site e-commerce click &amp; collect avec deux profils clients distincts (professionnel / particulier), un catalogue produits structuré, un système de commande Drive, une interface d'administration pour les gérants, et des tableaux de bord statistiques.</p>
+    <!-- 5 blocs visuels -->
+    <div style="margin-top:2.4rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);">
+
+      <div style="background:var(--paper); padding:1.4rem 1.3rem;">
+        <div style="font-size:1.5rem; margin-bottom:0.7rem;">👤</div>
+        <p class="mono" style="font-size:0.6rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.4rem;">01</p>
+        <h4 style="font-size:0.92rem; line-height:1.25;">Comptes &amp; profils</h4>
+        <p style="font-size:0.8rem; color:var(--slate); margin-top:0.4rem; line-height:1.5;">Inscription B2B avec validation manuelle, accès B2C à l'ouverture grand public.</p>
+      </div>
+
+      <div style="background:var(--paper); padding:1.4rem 1.3rem;">
+        <div style="font-size:1.5rem; margin-bottom:0.7rem;">🗂️</div>
+        <p class="mono" style="font-size:0.6rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.4rem;">02</p>
+        <h4 style="font-size:0.92rem; line-height:1.25;">Catalogue &amp; tarifs</h4>
+        <p style="font-size:0.8rem; color:var(--slate); margin-top:0.4rem; line-height:1.5;">3 groupes de prix (grossiste / grand public / promo), gestion de stock en temps réel.</p>
+      </div>
+
+      <div style="background:var(--paper); padding:1.4rem 1.3rem;">
+        <div style="font-size:1.5rem; margin-bottom:0.7rem;">🛒</div>
+        <p class="mono" style="font-size:0.6rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.4rem;">03</p>
+        <h4 style="font-size:0.92rem; line-height:1.25;">Commande Drive</h4>
+        <p style="font-size:0.8rem; color:var(--slate); margin-top:0.4rem; line-height:1.5;">Créneau de retrait, confirmation email, paiement en ligne ou sur place.</p>
+      </div>
+
+      <div style="background:var(--paper); padding:1.4rem 1.3rem;">
+        <div style="font-size:1.5rem; margin-bottom:0.7rem;">⚙️</div>
+        <p class="mono" style="font-size:0.6rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.4rem;">04</p>
+        <h4 style="font-size:0.92rem; line-height:1.25;">Administration</h4>
+        <p style="font-size:0.8rem; color:var(--slate); margin-top:0.4rem; line-height:1.5;">Gestion des commandes, des comptes clients et du catalogue depuis une interface dédiée.</p>
+      </div>
+
+      <div style="background:var(--paper); padding:1.4rem 1.3rem;">
+        <div style="font-size:1.5rem; margin-bottom:0.7rem;">📊</div>
+        <p class="mono" style="font-size:0.6rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.4rem;">05</p>
+        <h4 style="font-size:0.92rem; line-height:1.25;">Statistiques</h4>
+        <p style="font-size:0.8rem; color:var(--slate); margin-top:0.4rem; line-height:1.5;">Tableau de bord : commandes, CA par profil, produits phares, taux de remplissage Drive.</p>
+      </div>
+
     </div>
 
-    <!-- Bloc 1 : Comptes & profils -->
-    <div style="margin-top:2.8rem;">
-      <p class="step-label" style="margin-bottom:0.8rem; color:var(--signal);">01 — Inscription, connexion &amp; profils</p>
-
-      <div class="finding-card">
-        <h4>Deux profils clients distincts</h4>
-        <p>Le site gère deux types de comptes : <strong>B2B (professionnel)</strong> — accès aux prix grossiste, commandes sans panier minimum limité, facturation pro ; et <strong>B2C (particulier)</strong> — accès progressif à partir de l'ouverture grand public dans 6 mois, prix au détail, interface simplifiée.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Inscription avec validation manuelle (B2B)</h4>
-        <p>Les comptes professionnels sont soumis à validation par les gérants avant activation. Un formulaire collecte : raison sociale, NIF, secteur d'activité, volume mensuel estimé. Activation par email après vérification.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Connexion sécurisée</h4>
-        <p>Authentification par email + mot de passe. Récupération par email. Session persistante sur navigateur (cookie sécurisé). Déconnexion automatique après inactivité prolongée.</p>
-      </div>
-    </div>
-
-    <!-- Bloc 2 : Groupes tarifaires -->
-    <div style="margin-top:2.4rem;">
-      <p class="step-label" style="margin-bottom:0.8rem; color:var(--signal);">02 — Groupes tarifaires &amp; catalogue</p>
-
-      <div class="finding-card">
-        <h4>Trois groupes de prix</h4>
-        <p>Prix <strong>Grossiste B2B</strong> (comptes validés), prix <strong>Grand public B2C</strong> (ouverture progressive), et prix <strong>Promotionnel</strong> (déstockage, offres ponctuelles). Chaque produit du catalogue peut avoir un prix par groupe — géré depuis l'administration.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Catalogue produits structuré</h4>
-        <p>Arborescence par rayons et catégories. Chaque produit : photo, désignation, unité de vente (carton / pièce / kg), référence interne, stock disponible, prix par groupe. Mise à jour par import CSV ou saisie directe dans l'interface admin.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Gestion des stocks</h4>
-        <p>Stock décrémenté à la validation de commande (pas au panier). Alerte de stock bas configurable. Produit masqué automatiquement en rupture totale si option activée.</p>
-      </div>
-    </div>
-
-    <!-- Bloc 3 : Expérience client & commande -->
-    <div style="margin-top:2.4rem;">
-      <p class="step-label" style="margin-bottom:0.8rem; color:var(--signal);">03 — Expérience client &amp; commande click &amp; collect</p>
-
-      <div class="finding-card">
-        <h4>Parcours de commande Drive</h4>
-        <p>Le client parcourt le catalogue, ajoute au panier, choisit un créneau de retrait (Drive), valide la commande. Il reçoit un email de confirmation avec récapitulatif, référence de commande et heure de retrait. Le gérant reçoit une notification et prépare la commande avant le créneau.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Créneaux de retrait configurables</h4>
-        <p>Les gérants définissent les plages horaires disponibles (jours, heures, capacité max par créneau). Le client choisit son créneau lors de la validation. Annulation possible jusqu'à X heures avant (paramétrable).</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Paiement</h4>
-        <p>Paiement en ligne par carte bancaire (Stripe ou équivalent disponible à Madagascar/Nosy Be) ou paiement sur place au retrait (option Mobile Money / espèces). Pour les comptes B2B : possibilité de paiement différé avec bon de commande selon accord commercial préalable.</p>
-      </div>
-    </div>
-
-    <!-- Bloc 4 : Administration -->
-    <div style="margin-top:2.4rem;">
-      <p class="step-label" style="margin-bottom:0.8rem; color:var(--signal);">04 — Administration &amp; gestion des commandes</p>
-
-      <div class="finding-card">
-        <h4>Interface de gestion des commandes</h4>
-        <p>Vue en temps réel de toutes les commandes : en attente de préparation, prêtes à retirer, retirées, annulées. Filtrage par date, statut, client, créneau. Export CSV pour suivi comptable. Impression du bon de préparation par commande.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Gestion des comptes clients</h4>
-        <p>Liste des comptes avec statut (en attente / actif / suspendu), profil (B2B / B2C), historique de commandes, montant total commandé. Activation, suspension et suppression de compte depuis l'interface admin.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Gestion du catalogue et des prix</h4>
-        <p>Ajout / modification / archivage de produits. Gestion des stocks en temps réel. Mise à jour des prix par groupe tarifaire. Import CSV pour mise à jour en masse. Gestion des promotions et des offres ponctuelles.</p>
-      </div>
-    </div>
-
-    <!-- Bloc 5 : Statistiques -->
-    <div style="margin-top:2.4rem;">
-      <p class="step-label" style="margin-bottom:0.8rem; color:var(--signal);">05 — Statistiques &amp; reporting</p>
-
-      <div class="finding-card">
-        <h4>Tableau de bord des ventes</h4>
-        <p>Vue synthétique : nombre de commandes par période, chiffre d'affaires par groupe tarifaire (B2B / B2C), produits les plus commandés, taux de remplissage des créneaux Drive. Graphiques par semaine / mois. Export PDF ou CSV.</p>
-      </div>
-
-      <div class="finding-card">
-        <h4>Analyse de la clientèle</h4>
-        <p>Nombre de clients actifs, nouveaux comptes, répartition B2B / B2C. Fréquence d'achat, panier moyen par profil. Ces données orienteront la stratégie d'ouverture grand public dans 6 mois.</p>
-      </div>
+    <!-- CTA vers page dédiée -->
+    <div style="margin-top:2rem; padding-top:1.8rem; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <p style="font-size:0.88rem; color:var(--slate); max-width:440px; line-height:1.55;">Chaque bloc est détaillé dans le cahier des charges complet : spécifications fonctionnelles, règles métier, contraintes techniques.</p>
+      <a href="/pem-cahier-des-charges.html" class="btn btn-signal" target="_blank" rel="noopener">Cahier des charges complet →</a>
     </div>
 
   </div>

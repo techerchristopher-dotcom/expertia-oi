@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cahier des charges — PEM Drive · Expertia</title>
+<meta name="description" content="Cahier des charges fonctionnel et technique du site e-commerce click & collect PEM Drive, Nosy Be.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1320;
+    --paper:#F5F6F4;
+    --paper-dim:#EDEEEA;
+    --line:#D8DCE1;
+    --signal:#FF5A1F;
+    --signal-dim:#E04F1B;
+    --slate:#4B5563;
+    --slate-light:#7A8290;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; line-height:1.1; }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--signal);
+    display:flex; align-items:center; gap:0.6rem;
+  }
+  .eyebrow::before{ content:""; width:6px; height:6px; background:var(--signal); border-radius:50%; flex-shrink:0; }
+  .wrap{ max-width:860px; margin:0 auto; padding-left:1.5rem; padding-right:1.5rem; }
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
+  .hairline{ border-top:1px solid var(--line); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    padding:0.75rem 1.4rem; font-size:0.9rem; font-weight:500;
+    border-radius:2px; cursor:pointer;
+    transition:transform 150ms ease, background 150ms ease, border-color 150ms ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-signal{ background:var(--signal); color:#fff; }
+  .btn-signal:hover{ background:var(--signal-dim); }
+  .btn-outline{ border:1px solid var(--line); color:var(--ink); background:transparent; }
+  .btn-outline:hover{ border-color:var(--ink); }
+
+  .step-label{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--slate-light);
+  }
+
+  .spec-block{ margin-top:2.8rem; }
+  .spec-block + .spec-block{ margin-top:3.2rem; }
+
+  .spec-num{
+    font-family:'IBM Plex Mono', monospace; font-size:0.62rem;
+    color:var(--signal); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:0.5rem;
+  }
+
+  .spec-row{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:0 1.5rem;
+    padding:0.9rem 0;
+    border-top:1px solid var(--line);
+    font-size:0.88rem;
+    line-height:1.6;
+  }
+  .spec-row:last-child{ border-bottom:1px solid var(--line); }
+  .spec-key{
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem;
+    color:var(--slate-light); letter-spacing:0.04em; padding-top:0.05rem;
+  }
+  .spec-val{ color:var(--ink); }
+  .spec-val strong{ font-weight:600; }
+
+  @media(max-width:560px){
+    .spec-row{ grid-template-columns:1fr; gap:0.3rem; }
+    .spec-key{ font-size:0.68rem; }
+  }
+
+  .toc-list{
+    list-style:none; margin-top:1rem;
+    display:flex; flex-direction:column; gap:0.4rem;
+  }
+  .toc-list li a{
+    font-size:0.88rem; color:var(--signal);
+    display:flex; align-items:center; gap:0.6rem;
+  }
+  .toc-list li a::before{
+    content:""; width:16px; height:1px;
+    background:var(--signal); flex-shrink:0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="hairline" style="position:sticky; top:0; background:rgba(245,246,244,0.95); backdrop-filter:blur(6px); z-index:50;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding-top:1rem; padding-bottom:1rem; max-width:1120px;">
+    <a href="/" style="display:flex; align-items:center;">
+      <img src="/images/logo-expertia.webp" alt="Expertia" style="height:36px; width:auto;">
+    </a>
+    <div style="display:flex; align-items:center; gap:1.5rem;">
+      <a href="/pem.html" style="font-size:0.85rem; color:var(--slate);">← Retour au projet PEM</a>
+      <a href="mailto:contact@expertia-oi.com" class="btn btn-signal" style="padding:0.55rem 1rem; font-size:0.82rem;">Nous écrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section style="background:var(--ink); color:var(--paper); padding:4rem 0 3.5rem;">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#9FB0D8;"><span style="color:#9FB0D8;">●</span>&nbsp; PEM Drive · Cahier des charges</p>
+    <h1 style="font-size:clamp(1.6rem, 3.5vw, 2.4rem); margin-top:1rem; max-width:660px; color:var(--paper);">
+      Spécifications fonctionnelles &amp; techniques
+    </h1>
+    <p style="margin-top:1rem; font-size:0.95rem; color:#C5CCDE; max-width:560px; line-height:1.65;">
+      5 blocs fonctionnels pour un e-commerce click &amp; collect à double profil client (B2B / B2C), adapté à la réalité du marché de Nosy Be.
+    </p>
+  </div>
+</section>
+
+<!-- ── SOMMAIRE ── -->
+<div style="background:var(--paper-dim); border-bottom:1px solid var(--line); padding:1.4rem 0;">
+  <div class="wrap">
+    <p class="step-label" style="margin-bottom:0.6rem;">Sommaire</p>
+    <ul class="toc-list">
+      <li><a href="#bloc-01">01 — Inscription, connexion &amp; profils</a></li>
+      <li><a href="#bloc-02">02 — Groupes tarifaires &amp; catalogue</a></li>
+      <li><a href="#bloc-03">03 — Expérience client &amp; commande Drive</a></li>
+      <li><a href="#bloc-04">04 — Administration &amp; gestion des commandes</a></li>
+      <li><a href="#bloc-05">05 — Statistiques &amp; reporting</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── CONTENU ── -->
+<div class="wrap" style="padding-top:4rem; padding-bottom:6rem;">
+
+  <!-- 01 Comptes & profils -->
+  <div class="spec-block" id="bloc-01">
+    <p class="spec-num">01 — Inscription, connexion &amp; profils</p>
+    <h2 style="font-size:1.25rem; margin-bottom:1.2rem;">Comptes utilisateurs &amp; gestion des accès</h2>
+
+    <div class="spec-row">
+      <span class="spec-key">Profils</span>
+      <span class="spec-val"><strong>B2B (professionnel)</strong> — accès prix grossiste, commandes sans minimum, facturation pro.<br><strong>B2C (particulier)</strong> — accès progressif à l'ouverture grand public (6 mois), prix détail, interface simplifiée.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Inscription B2B</span>
+      <span class="spec-val">Formulaire : raison sociale, NIF, secteur d'activité, volume mensuel estimé. Soumis à validation manuelle par les gérants avant activation. Email de confirmation à l'activation.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Inscription B2C</span>
+      <span class="spec-val">Email + mot de passe. Activation immédiate par lien email. Disponible à l'ouverture grand public — formulaire simplifié.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Connexion</span>
+      <span class="spec-val">Email + mot de passe. Récupération par lien email. Session persistante (cookie sécurisé). Déconnexion automatique après inactivité prolongée (paramétrable).</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Sécurité</span>
+      <span class="spec-val">HTTPS obligatoire. Mots de passe hachés (bcrypt). Protection anti-bruteforce (blocage temporaire après N tentatives échouées).</span>
+    </div>
+  </div>
+
+  <!-- 02 Catalogue & tarifs -->
+  <div class="spec-block" id="bloc-02">
+    <p class="spec-num">02 — Groupes tarifaires &amp; catalogue</p>
+    <h2 style="font-size:1.25rem; margin-bottom:1.2rem;">Catalogue produits &amp; gestion des prix</h2>
+
+    <div class="spec-row">
+      <span class="spec-key">Groupes de prix</span>
+      <span class="spec-val"><strong>Grossiste B2B</strong> — comptes professionnels validés.<br><strong>Grand public B2C</strong> — ouverture progressive, prix détail.<br><strong>Promotionnel</strong> — déstockage et offres ponctuelles, activable par produit.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Structure catalogue</span>
+      <span class="spec-val">Arborescence : rayons → catégories → produits. Chaque produit : photo, désignation, unité de vente (carton / pièce / kg), référence interne, stock disponible, prix par groupe tarifaire.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Mise à jour</span>
+      <span class="spec-val">Import CSV pour mise à jour en masse. Saisie directe depuis l'interface admin. Historique des modifications par produit.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Gestion des stocks</span>
+      <span class="spec-val">Stock décrémenté à la validation de commande (pas à l'ajout au panier). Alerte de stock bas configurable par produit. Masquage automatique en rupture totale (option activable).</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Recherche &amp; filtres</span>
+      <span class="spec-val">Recherche textuelle (désignation, référence). Filtrage par rayon, catégorie, disponibilité. Tri par prix, popularité, nouveautés.</span>
+    </div>
+  </div>
+
+  <!-- 03 Expérience client & commande -->
+  <div class="spec-block" id="bloc-03">
+    <p class="spec-num">03 — Expérience client &amp; commande click &amp; collect</p>
+    <h2 style="font-size:1.25rem; margin-bottom:1.2rem;">Parcours de commande Drive</h2>
+
+    <div class="spec-row">
+      <span class="spec-key">Parcours</span>
+      <span class="spec-val">Navigation catalogue → ajout au panier → choix du créneau Drive → validation → confirmation email avec récapitulatif, référence et heure de retrait.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Créneaux Drive</span>
+      <span class="spec-val">Plages horaires définies par les gérants (jours, heures, capacité max par créneau). Sélection lors de la validation de commande. Annulation possible jusqu'à X heures avant le retrait (paramétrable).</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Paiement</span>
+      <span class="spec-val"><strong>En ligne :</strong> carte bancaire via Stripe (ou équivalent disponible à Madagascar).<br><strong>Sur place :</strong> Mobile Money, espèces au retrait.<br><strong>B2B uniquement :</strong> paiement différé avec bon de commande, selon accord commercial préalable.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Notifications</span>
+      <span class="spec-val">Email client : confirmation de commande, commande prête à retirer, rappel de créneau. Notification gérant : nouvelle commande à préparer.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Historique client</span>
+      <span class="spec-val">Espace "Mes commandes" : statut en temps réel, détail de chaque commande, possibilité de renouveler une commande précédente.</span>
+    </div>
+  </div>
+
+  <!-- 04 Administration -->
+  <div class="spec-block" id="bloc-04">
+    <p class="spec-num">04 — Administration &amp; gestion des commandes</p>
+    <h2 style="font-size:1.25rem; margin-bottom:1.2rem;">Interface de gestion pour les gérants</h2>
+
+    <div class="spec-row">
+      <span class="spec-key">Gestion commandes</span>
+      <span class="spec-val">Vue en temps réel : en attente de préparation, prêtes à retirer, retirées, annulées. Filtrage par date, statut, client, créneau. Impression du bon de préparation. Export CSV pour suivi comptable.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Comptes clients</span>
+      <span class="spec-val">Liste avec statut (en attente / actif / suspendu), profil (B2B / B2C), historique de commandes et montant total. Activation, suspension, suppression depuis l'admin.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Catalogue &amp; prix</span>
+      <span class="spec-val">Ajout, modification, archivage de produits. Stocks en temps réel. Prix par groupe tarifaire. Import CSV. Gestion des promotions et offres ponctuelles.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Créneaux Drive</span>
+      <span class="spec-val">Création et modification des plages horaires. Capacité max par créneau. Fermeture exceptionnelle (jours fériés, congés). Vue calendrier des créneaux à venir.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Rôles admin</span>
+      <span class="spec-val">Accès gérant (full) et opérateur (lecture + gestion commandes uniquement). Traçabilité des actions par utilisateur admin.</span>
+    </div>
+  </div>
+
+  <!-- 05 Statistiques -->
+  <div class="spec-block" id="bloc-05">
+    <p class="spec-num">05 — Statistiques &amp; reporting</p>
+    <h2 style="font-size:1.25rem; margin-bottom:1.2rem;">Tableaux de bord &amp; analyse</h2>
+
+    <div class="spec-row">
+      <span class="spec-key">Ventes</span>
+      <span class="spec-val">Nombre de commandes par période (jour / semaine / mois). Chiffre d'affaires par groupe tarifaire (B2B / B2C / promo). Produits les plus commandés. Panier moyen par profil.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Drive</span>
+      <span class="spec-val">Taux de remplissage des créneaux. Pics de fréquentation par jour et heure. Commandes annulées vs retirées.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Clientèle</span>
+      <span class="spec-val">Nouveaux comptes, clients actifs, répartition B2B / B2C. Fréquence d'achat. Ces données orienteront la stratégie d'ouverture grand public.</span>
+    </div>
+    <div class="spec-row">
+      <span class="spec-key">Export</span>
+      <span class="spec-val">Export PDF ou CSV pour chaque tableau de bord. Période sélectionnable librement.</span>
+    </div>
+  </div>
+
+  <!-- CTA retour -->
+  <div style="margin-top:4rem; padding-top:2rem; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+    <p style="font-size:0.88rem; color:var(--slate);">Voir également les étapes suivantes du projet.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:0.8rem;">
+      <a href="/pem.html#etape-3" class="btn btn-signal">Étape 3 — Présentation des solutions →</a>
+      <a href="/pem.html" class="btn btn-outline">← Retour au projet</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="hairline" style="background:var(--paper-dim); padding:2.5rem 0;">
+  <div class="wrap" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; max-width:1120px;">
+    <p style="font-size:0.85rem; color:var(--slate);">© Expertia — IA &amp; automatisation, Océan Indien</p>
+    <div style="display:flex; gap:1.5rem; font-size:0.85rem;">
+      <a href="/" style="color:var(--slate);">Portfolio</a>
+      <a href="mailto:contact@expertia-oi.com" style="color:var(--signal); font-weight:500;">Nous écrire →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
