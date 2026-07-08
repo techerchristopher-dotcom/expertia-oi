@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEM — E-commerce click & collect · Expertia</title>
+<meta name="description" content="Accompagnement digital complet pour PEM, hard discount Nosy Be — audit, cahier des charges, e-commerce click & collect, stratégie digitale B2B → B2C.">
+<link rel="canonical" href="https://expertia-oi.com/pem.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1320;
+    --ink-soft:#16213A;
+    --paper:#F5F6F4;
+    --paper-dim:#EDEEEA;
+    --line:#D8DCE1;
+    --line-dark:#2A3550;
+    --signal:#FF5A1F;
+    --signal-dim:#E04F1B;
+    --slate:#4B5563;
+    --slate-light:#7A8290;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    line-height:1.1;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--signal);
+    display:flex; align-items:center; gap:0.6rem;
+  }
+  .eyebrow::before{
+    content:""; width:6px; height:6px;
+    background:var(--signal); border-radius:50%; flex-shrink:0;
+  }
+  .wrap{ max-width:860px; margin:0 auto; padding-left:1.5rem; padding-right:1.5rem; }
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
+  .hairline{ border-top:1px solid var(--line); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    padding:0.75rem 1.4rem;
+    font-size:0.9rem; font-weight:500;
+    border-radius:2px; cursor:pointer;
+    transition:transform 150ms ease, background 150ms ease, border-color 150ms ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-signal{ background:var(--signal); color:#fff; }
+  .btn-signal:hover{ background:var(--signal-dim); }
+  .btn-outline{ border:1px solid var(--line); color:var(--ink); background:transparent; }
+  .btn-outline:hover{ border-color:var(--ink); }
+
+  .step-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--slate-light);
+  }
+
+  .pill{
+    display:inline-block;
+    font-size:0.75rem;
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    padding:0.2rem 0.6rem;
+    border:1px solid var(--line);
+    color:var(--slate);
+    border-radius:2px;
+  }
+  .pill-signal{ background:var(--signal); color:#fff; border-color:var(--signal); }
+
+  .metric-row{ display:flex; flex-wrap:wrap; gap:2rem; margin-top:1.4rem; }
+  .metric-item .num{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:2rem; font-weight:700;
+    color:var(--signal); line-height:1;
+  }
+  .metric-item .label{ font-size:0.8rem; color:var(--slate); margin-top:0.2rem; }
+
+  .pbl{
+    display:flex; flex-direction:column; gap:0.8rem;
+    font-size:0.95rem; margin-top:1.2rem; max-width:680px;
+  }
+  .pbl span{ color:var(--signal); font-weight:600; }
+
+  /* Steps nav */
+  .step-locked{ opacity:0.45; }
+  .step-lock-icon{ font-size:0.7rem; margin-left:0.3rem; }
+
+  /* Finding cards */
+  .finding-card{
+    padding:1.2rem 1.4rem;
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:3px solid var(--signal);
+    margin-top:0.8rem;
+  }
+  .finding-card h4{ font-size:0.95rem; margin-bottom:0.3rem; }
+  .finding-card p{ font-size:0.88rem; color:var(--slate); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="hairline" style="position:sticky; top:0; background:rgba(245,246,244,0.95); backdrop-filter:blur(6px); z-index:50;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding-top:1rem; padding-bottom:1rem; max-width:1120px;">
+    <a href="/" style="display:flex; align-items:center;">
+      <img src="/images/logo-expertia.webp" alt="Expertia" style="height:36px; width:auto;">
+    </a>
+    <div style="display:flex; align-items:center; gap:1.5rem;">
+      <a href="/" style="font-size:0.85rem; color:var(--slate);">← Retour au portfolio</a>
+      <a href="mailto:contact@expertia-oi.com" class="btn btn-signal" style="padding:0.55rem 1rem; font-size:0.82rem;">Nous écrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section style="background:var(--ink); color:var(--paper); padding:5rem 0 4rem;">
+  <div class="wrap">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:0;">
+        <p class="eyebrow" style="color:#9FB0D8;"><span style="color:#9FB0D8;">●</span>&nbsp; EN COURS · Juillet 2026</p>
+        <h1 style="font-size:clamp(1.8rem, 4vw, 2.8rem); margin-top:1.2rem; max-width:680px; color:var(--paper);">
+          E-commerce click &amp; collect<br>
+          <span style="color:var(--signal);">PEM — Hard discount, Nosy Be</span>
+        </h1>
+        <p class="mono" style="margin-top:0.8rem; font-size:0.78rem; color:#9FB0D8; letter-spacing:0.06em;">
+          COMMERCE DE GROS · NOSY BE · B2B → GRAND PUBLIC
+        </p>
+        <p style="margin-top:1.8rem; font-size:1rem; color:#C5CCDE; max-width:580px; line-height:1.65;">
+          Centre commercial hard discount lancé il y a 1 an à Nosy Be. Les clients professionnels commandent encore par capture d'écran WhatsApp. Objectif : un site e-commerce click &amp; collect pour les pros — et ouvert aux particuliers dans 6 mois.
+        </p>
+        <div style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">Audit digital</span>
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">Cahier des charges</span>
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">E-commerce</span>
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">Click &amp; collect</span>
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">B2B → B2C</span>
+          <span class="pill" style="border-color:#2A3550; color:#9FB0D8;">Stratégie digitale</span>
+        </div>
+      </div>
+      <!-- Logo client -->
+      <div style="flex-shrink:0; padding:1rem 1.2rem; background:#fff; border-radius:6px; display:flex; align-items:center; justify-content:center; width:120px; height:120px; align-self:flex-start; margin-top:0.5rem;">
+        <img src="/images/logo-pem.webp" alt="PEM" style="max-width:100%; max-height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOMMAIRE ── -->
+<div style="background:var(--paper-dim); border-bottom:1px solid var(--line); padding:1.5rem 0;">
+  <div class="wrap" style="display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; align-items:center;">
+    <span style="font-size:0.78rem; color:var(--slate-light); font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:0.08em;">Étapes :</span>
+    <a href="#etape-1" style="font-size:0.85rem; color:var(--signal); font-weight:500;">1 — Audit digital</a>
+    <span style="color:var(--line);">·</span>
+    <span style="font-size:0.85rem; color:var(--slate-light);" class="step-locked">2 — Cahier des charges <span class="step-lock-icon">🔒</span></span>
+    <span style="color:var(--line);">·</span>
+    <span style="font-size:0.85rem; color:var(--slate-light);" class="step-locked">3 — Présentation des solutions <span class="step-lock-icon">🔒</span></span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ÉTAPE 1 — AUDIT DIGITAL
+     ════════════════════════════════════════════ -->
+<div id="etape-1">
+  <div class="wrap" style="padding-top:4rem; padding-bottom:5rem;">
+
+    <div class="step-label">Étape 1 sur 3</div>
+    <p class="eyebrow" style="margin-top:0.3rem;">Audit digital · État des lieux complet</p>
+    <h2 style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-top:1rem; max-width:620px;">
+      Comprendre exactement où on en est avant de construire quoi que ce soit.
+    </h2>
+
+    <div class="pbl">
+      <p><span>Problème —</span> la structure a 1 an d'existence, une page Facebook active, mais aucun outil digital pour gérer les commandes. Les pros passent commande par capture d'écran WhatsApp envoyée aux gérants — pas de traçabilité, pas d'historique, pas de catalogue structuré.</p>
+      <p><span>Méthode —</span> audit complet en 3 volets : analyse de l'existant digital (Facebook, présence web, outils internes), cartographie des flux de commande actuels, et analyse de la concurrence locale. L'objectif est d'identifier les points de friction et de poser les bases du cahier des charges.</p>
+      <p><span>Livrable —</span> un rapport d'audit structuré qui liste les constats, les priorités et les recommandations — base de travail pour l'étape 2.</p>
+    </div>
+
+    <!-- Constats clés -->
+    <div style="margin-top:2.4rem;">
+      <p class="step-label" style="margin-bottom:0.8rem;">Constats identifiés</p>
+
+      <div class="finding-card">
+        <h4>Zéro outil de commande structuré</h4>
+        <p>Les commandes arrivent par WhatsApp sous forme de captures d'écran. Aucune traçabilité, risque d'erreurs, charge mentale élevée pour les gérants.</p>
+      </div>
+
+      <div class="finding-card">
+        <h4>Catalogue produit non digitalisé</h4>
+        <p>Pas de liste produits en ligne, pas de prix publics accessibles. Le client ne peut pas anticiper sa commande sans contact direct.</p>
+      </div>
+
+      <div class="finding-card">
+        <h4>Page Facebook existante mais sous-exploitée</h4>
+        <p>Une présence Facebook est en place — point d'appui pour la stratégie digitale, mais sans contenu régulier ni lien vers un site ou catalogue.</p>
+      </div>
+
+      <div class="finding-card">
+        <h4>Marché B2B uniquement — ouverture B2C planifiée</h4>
+        <p>Clientèle 100 % professionnelle aujourd'hui. L'ouverture aux particuliers dans 6 mois impose une architecture e-commerce qui gère deux types de profils clients dès le départ.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ÉTAPE 2 — CAHIER DES CHARGES (verrouillée)
+     ════════════════════════════════════════════ -->
+<div id="etape-2" style="border-top:1px solid var(--line); background:var(--paper-dim);">
+  <div class="wrap" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="step-label">Étape 2 sur 3</div>
+    <p class="eyebrow" style="margin-top:0.3rem; opacity:0.5;">Cahier des charges · En préparation</p>
+    <h2 style="font-size:clamp(1.3rem, 3vw, 1.8rem); margin-top:1rem; max-width:560px; color:var(--slate);">
+      Définir précisément ce qu'on construit, pour qui, et comment.
+    </h2>
+    <p style="margin-top:1rem; font-size:0.9rem; color:var(--slate-light); max-width:580px; line-height:1.6;">
+      Cette étape sera déverrouillée à l'issue de l'audit. Elle couvrira : architecture du site e-commerce, gestion des deux profils clients (pro / particulier), catalogue produits, flux de commande click &amp; collect, intégration paiement, et hébergement.
+    </p>
+    <div style="margin-top:1.4rem; display:inline-flex; align-items:center; gap:0.6rem; font-size:0.82rem; color:var(--slate-light); font-family:'IBM Plex Mono', monospace; letter-spacing:0.06em; text-transform:uppercase;">
+      <span>🔒</span> Disponible après validation de l'étape 1
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ÉTAPE 3 — PRÉSENTATION DES SOLUTIONS (verrouillée)
+     ════════════════════════════════════════════ -->
+<div id="etape-3" style="border-top:1px solid var(--line);">
+  <div class="wrap" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="step-label">Étape 3 sur 3</div>
+    <p class="eyebrow" style="margin-top:0.3rem; opacity:0.5;">Présentation des solutions · À venir</p>
+    <h2 style="font-size:clamp(1.3rem, 3vw, 1.8rem); margin-top:1rem; max-width:560px; color:var(--slate);">
+      Choix technologiques, maquettes et plan de déploiement.
+    </h2>
+    <p style="margin-top:1rem; font-size:0.9rem; color:var(--slate-light); max-width:580px; line-height:1.6;">
+      Présentation des solutions retenues : stack technique, maquettes des parcours clés (commande pro, panier particulier, click &amp; collect), planning de mise en production, et stratégie de communication pour l'ouverture grand public.
+    </p>
+    <div style="margin-top:1.4rem; display:inline-flex; align-items:center; gap:0.6rem; font-size:0.82rem; color:var(--slate-light); font-family:'IBM Plex Mono', monospace; letter-spacing:0.06em; text-transform:uppercase;">
+      <span>🔒</span> Disponible après validation de l'étape 2
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="hairline" style="background:var(--paper-dim); padding:2.5rem 0;">
+  <div class="wrap" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; max-width:1120px;">
+    <p style="font-size:0.85rem; color:var(--slate);">© Expertia — IA &amp; automatisation, Océan Indien</p>
+    <div style="display:flex; gap:1.5rem; font-size:0.85rem;">
+      <a href="/" style="color:var(--slate);">Portfolio</a>
+      <a href="mailto:contact@expertia-oi.com" style="color:var(--signal); font-weight:500;">Nous écrire →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
