@@ -362,17 +362,51 @@
 <div id="etape-3" style="border-top:1px solid var(--line);">
   <div class="wrap" style="padding-top:4rem; padding-bottom:5rem;">
     <div class="step-label">Étape 3 sur 3</div>
-    <p class="eyebrow" style="margin-top:0.3rem;">Présentation des solutions · Proposition &amp; tunnel</p>
+    <p class="eyebrow" style="margin-top:0.3rem;">Présentation des solutions · Démo &amp; documents</p>
     <h2 style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-top:1rem; max-width:620px;">
-      Choix technologiques, proposition commerciale et tunnel de conversion.
+      Le site est en ligne — testez-le maintenant.
     </h2>
 
-    <div class="pbl">
-      <p><span>Livrable —</span> deux documents complets : la proposition commerciale détaillant les phases de déploiement, les rôles de chaque partie et les modalités d'intervention ; et le tunnel de conversion autonome, qui structure le parcours client de la découverte jusqu'à la commande.</p>
+    <!-- Démo live — bloc hero -->
+    <div style="margin-top:2rem; background:var(--ink); overflow:hidden;">
+
+      <!-- Barre de navigateur fictive -->
+      <div style="background:#1A2540; padding:0.6rem 1rem; display:flex; align-items:center; gap:0.6rem;">
+        <div style="display:flex; gap:0.4rem;">
+          <span style="width:10px; height:10px; background:#FF5F57; border-radius:50%; display:block;"></span>
+          <span style="width:10px; height:10px; background:#FEBC2E; border-radius:50%; display:block;"></span>
+          <span style="width:10px; height:10px; background:#28C840; border-radius:50%; display:block;"></span>
+        </div>
+        <div style="flex:1; background:#0B1320; border-radius:3px; padding:0.25rem 0.8rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="width:8px; height:8px; background:#4ADE80; border-radius:50%; display:block; flex-shrink:0;"></span>
+          <span class="mono" style="font-size:0.72rem; color:#9FB0D8; letter-spacing:0.04em;">pemdrive.netlify.app</span>
+        </div>
+      </div>
+
+      <!-- Aperçu iframe -->
+      <div style="position:relative; width:100%; padding-bottom:52%; background:#0F1929; overflow:hidden;">
+        <iframe
+          src="https://pemdrive.netlify.app/"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; transform-origin:top left;"
+          loading="lazy"
+          title="PEM Drive — démo live"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+        </iframe>
+      </div>
+
+      <!-- CTA sous l'iframe -->
+      <div style="padding:1.4rem 1.6rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; border-top:1px solid #1A2540;">
+        <div>
+          <p style="font-size:0.92rem; color:var(--paper); font-weight:500;">PEM Drive — site e-commerce click &amp; collect</p>
+          <p style="font-size:0.8rem; color:#9FB0D8; margin-top:0.2rem;">Catalogue produits · Commande Drive · Double profil B2B / B2C</p>
+        </div>
+        <a href="https://pemdrive.netlify.app/" target="_blank" rel="noopener" class="btn btn-signal" style="flex-shrink:0;">Ouvrir en plein écran →</a>
+      </div>
     </div>
 
-    <!-- Document cards -->
-    <div style="margin-top:2.4rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem;">
+    <!-- Documents -->
+    <p class="step-label" style="margin-top:3rem; margin-bottom:1rem;">Documents associés</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem;">
 
       <div style="background:#fff; border:1px solid var(--line); border-top:3px solid var(--signal); padding:1.6rem;">
         <p class="mono" style="font-size:0.62rem; color:var(--signal); letter-spacing:0.12em; margin-bottom:0.8rem;">DOCUMENT 01</p>
