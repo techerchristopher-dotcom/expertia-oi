@@ -142,6 +142,7 @@
       <li><a href="#bloc-04">04 — Administration &amp; gestion des commandes</a></li>
       <li><a href="#bloc-05">05 — Statistiques &amp; reporting</a></li>
       <li><a href="#bloc-06" style="color:#4ADE80;">06 · IA — Synchronisation automatique des stocks</a></li>
+      <li><a href="#bloc-07" style="color:#4ADE80;">07 · IA — Transformation photo produit</a></li>
     </ul>
   </div>
 </div>
@@ -318,6 +319,53 @@
       <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
         <span class="spec-key" style="color:#7A8290;">Résultat</span>
         <span class="spec-val" style="color:#C5CCDE;">Le catalogue en ligne est toujours fidèle à la réalité du stock — sans intervention manuelle des gérants, sans connexion directe entre les deux systèmes.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 07 Photo IA -->
+  <div class="spec-block" id="bloc-07" style="background:var(--ink-soft, #16213A); color:var(--paper); padding:2rem; margin-top:2px;">
+
+    <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1.4rem; flex-wrap:wrap;">
+      <span style="background:#1E3A5F; color:#9FB0D8; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.14em; padding:0.25rem 0.7rem; text-transform:uppercase;">Blocage identifié</span>
+      <span style="font-size:0.85rem; color:#9FB0D8;">1 900 produits à photographier — zéro visuel existant, shooting pro trop coûteux.</span>
+    </div>
+
+    <div style="border-left:2px solid #4ADE80; padding-left:1.2rem; margin-bottom:1.8rem;">
+      <p style="font-size:0.88rem; color:#C5CCDE; line-height:1.65;">
+        Le catalogue PEM compte 1 900 références. Sans photo produit, un site e-commerce ne peut pas fonctionner — les clients n'achètent pas ce qu'ils ne voient pas. Faire appel à un photographe professionnel pour 1 900 produits est hors budget et prendrait des semaines. Il fallait trouver une alternative scalable.
+      </p>
+    </div>
+
+    <p class="spec-num" style="color:#4ADE80; margin-bottom:0.5rem;">07 · IA — SOLUTION RETENUE : TRANSFORMATION PHOTO AUTOMATIQUE</p>
+    <h2 style="font-size:1.2rem; color:var(--paper); margin-bottom:0.6rem;">Agent IA : photo brute → rendu produit professionnel</h2>
+    <p style="font-size:0.88rem; color:#9FB0D8; margin-bottom:1.4rem; line-height:1.6;">Une photo prise avec un smartphone suffit. L'agent IA s'occupe du reste.</p>
+
+    <div style="margin-bottom:1.4rem;">
+      <a href="https://web-production-5465d.up.railway.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.6rem; padding:0.65rem 1.2rem; background:#4ADE80; color:#0B1320; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; border-radius:2px;">Tester l'outil en direct →</a>
+    </div>
+
+    <div style="border-top:1px solid #2A3550;">
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Entrée</span>
+        <span class="spec-val" style="color:#C5CCDE;">Une photo brute prise avec un smartphone ou un appareil photo basique. Aucune contrainte de mise en scène — l'agent gère le traitement.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Traitement IA</span>
+        <span class="spec-val" style="color:#C5CCDE;">Détourage automatique du produit. Application d'un fond neutre standardisé. Correction de luminosité, contraste et balance des blancs. Cadrage normalisé pour le catalogue.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Sortie</span>
+        <span class="spec-val" style="color:#C5CCDE;">Image produit au format standard du catalogue (fond blanc, dimensions fixes), prête à être injectée dans la fiche produit du site e-commerce.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Volume &amp; débit</span>
+        <span class="spec-val" style="color:#C5CCDE;">Traitement unitaire ou en lot. L'objectif est de traiter l'intégralité des <strong style="color:var(--paper);">1 900 références</strong> PEM sans coût de shooting professionnel.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Intégration</span>
+        <span class="spec-val" style="color:#C5CCDE;">Les images générées sont associées aux références produits et synchronisées avec le catalogue via l'agent de synchro (bloc 06). Le gérant valide ou rejette le rendu depuis l'interface admin.</span>
       </div>
     </div>
 
