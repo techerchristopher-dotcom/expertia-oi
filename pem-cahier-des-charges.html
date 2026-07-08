@@ -141,6 +141,7 @@
       <li><a href="#bloc-03">03 — Expérience client &amp; commande Drive</a></li>
       <li><a href="#bloc-04">04 — Administration &amp; gestion des commandes</a></li>
       <li><a href="#bloc-05">05 — Statistiques &amp; reporting</a></li>
+      <li><a href="#bloc-06" style="color:#4ADE80;">06 · IA — Synchronisation automatique des stocks</a></li>
     </ul>
   </div>
 </div>
@@ -277,6 +278,49 @@
       <span class="spec-key">Export</span>
       <span class="spec-val">Export PDF ou CSV pour chaque tableau de bord. Période sélectionnable librement.</span>
     </div>
+  </div>
+
+  <!-- 06 Synchro IA -->
+  <div class="spec-block" id="bloc-06" style="background:var(--ink); color:var(--paper); padding:2rem; margin-top:3.2rem;">
+
+    <!-- En-tête blocage -->
+    <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1.4rem; flex-wrap:wrap;">
+      <span style="background:var(--signal); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.14em; padding:0.25rem 0.7rem; text-transform:uppercase;">Blocage identifié</span>
+      <span style="font-size:0.85rem; color:#9FB0D8;">Le logiciel de gestion PEM n'expose aucune API — connexion directe impossible.</span>
+    </div>
+
+    <div style="border-left:2px solid var(--signal); padding-left:1.2rem; margin-bottom:1.8rem;">
+      <p style="font-size:0.88rem; color:#C5CCDE; line-height:1.65;">
+        Lors de l'audit, on découvre que le logiciel interne (gestion des stocks, des références produits et des prix) ne dispose d'aucune clé API ni point d'entrée web. Il est impossible de le connecter directement au site e-commerce. Sans solution intermédiaire, le catalogue en ligne serait figé et le stock affiché toujours faux.
+      </p>
+    </div>
+
+    <p class="spec-num" style="color:#4ADE80; margin-bottom:0.5rem;">06 · IA — SOLUTION RETENUE : SYNCHRONISATION AUTOMATIQUE</p>
+    <h2 style="font-size:1.2rem; color:var(--paper); margin-bottom:1.4rem;">Agent IA de synchronisation toutes les 10 minutes</h2>
+
+    <div style="border-top:1px solid #2A3550;">
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Principe</span>
+        <span class="spec-val" style="color:#C5CCDE;">Un agent IA tourne en tâche de fond sur un serveur. Toutes les 10 minutes, il se connecte à la base de données du logiciel interne, extrait les données à jour (stocks, prix, références), et les réinjecte dans la base du site web via une API sécurisée.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Ce qui est synchronisé</span>
+        <span class="spec-val" style="color:#C5CCDE;">Niveaux de stock par produit et unité de vente. Prix par groupe tarifaire (B2B / B2C / promo). Références et désignations produits. Disponibilité (rupture, actif, archivé).</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Fréquence</span>
+        <span class="spec-val" style="color:#C5CCDE;">Toutes les <strong style="color:var(--paper);">10 minutes</strong>. Paramétrable selon le volume de données et les contraintes serveur. Synchronisation complète ou différentielle (seules les lignes modifiées).</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Fiabilité</span>
+        <span class="spec-val" style="color:#C5CCDE;">En cas d'échec de synchro (logiciel éteint, erreur réseau), le site conserve les dernières données valides et affiche un indicateur "données mises à jour il y a X min". Une alerte email est envoyée aux gérants si la synchro échoue plus de 3 fois de suite.</span>
+      </div>
+      <div class="spec-row" style="border-top:none; border-bottom:1px solid #2A3550;">
+        <span class="spec-key" style="color:#7A8290;">Résultat</span>
+        <span class="spec-val" style="color:#C5CCDE;">Le catalogue en ligne est toujours fidèle à la réalité du stock — sans intervention manuelle des gérants, sans connexion directe entre les deux systèmes.</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- CTA retour -->
