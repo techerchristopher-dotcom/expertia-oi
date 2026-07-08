@@ -128,6 +128,98 @@
   @media(min-width:640px){
     .md-flex{ display:flex; gap:3rem; }
   }
+
+  /* ── Carousel ── */
+  .carousel-outer{ position:relative; margin-top:1.5rem; }
+  .carousel-viewport{ overflow:hidden; border-radius:4px; }
+  .carousel-track{
+    display:flex; gap:1rem;
+    transition:transform 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  .carousel-slide{
+    flex:0 0 calc(33.333% - 0.68rem);
+    aspect-ratio:1/1;
+    overflow:hidden;
+    cursor:pointer;
+    border:1px solid var(--line);
+    border-radius:4px;
+  }
+  .carousel-slide img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform 0.3s ease;
+  }
+  .carousel-slide:hover img{ transform:scale(1.04); }
+  @media(max-width:640px){
+    .carousel-slide{ flex:0 0 85%; }
+  }
+  .carousel-btn{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.92); border:1px solid var(--line);
+    border-radius:50%; width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:1.4rem; z-index:10;
+    transition:background 150ms, box-shadow 150ms;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+  }
+  .carousel-btn:hover{ background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.18); }
+  .carousel-prev{ left:-16px; }
+  .carousel-next{ right:-16px; }
+  @media(max-width:640px){
+    .carousel-prev{ left:4px; }
+    .carousel-next{ right:4px; }
+  }
+  .carousel-dots{
+    display:flex; gap:0.45rem; justify-content:center; margin-top:1rem;
+  }
+  .carousel-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--line); cursor:pointer;
+    transition:background 200ms, transform 200ms;
+    border:none; padding:0;
+  }
+  .carousel-dot.active{ background:var(--signal); transform:scale(1.3); }
+
+  /* ── Lightbox ── */
+  .lightbox{
+    display:none; position:fixed; inset:0;
+    background:rgba(0,0,0,0.93); z-index:999;
+    align-items:center; justify-content:center;
+  }
+  .lightbox.open{ display:flex; }
+  .lb-img{
+    max-width:min(90vw, 640px);
+    max-height:90vh; object-fit:contain;
+    border-radius:4px; display:block;
+  }
+  .lb-close{
+    position:fixed; top:1rem; right:1.2rem;
+    background:none; border:none; color:#fff;
+    font-size:2rem; cursor:pointer; line-height:1; z-index:1000;
+    opacity:0.75; transition:opacity 150ms;
+  }
+  .lb-close:hover{ opacity:1; }
+  .lb-arrow{
+    position:fixed; top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.12); border:none; color:#fff;
+    font-size:2.4rem; cursor:pointer; padding:0.8rem 0.7rem;
+    z-index:1000; border-radius:2px;
+    transition:background 150ms;
+  }
+  .lb-arrow:hover{ background:rgba(255,255,255,0.22); }
+  .lb-prev{ left:0; } .lb-next{ right:0; }
+
+  /* ── Platform logos ── */
+  .platform-logos{
+    display:flex; flex-wrap:wrap; gap:1.8rem; align-items:center;
+    margin-top:1.2rem;
+  }
+  .platform-logo-link{
+    display:inline-flex; align-items:center;
+    opacity:0.85; transition:opacity 150ms, transform 150ms;
+  }
+  .platform-logo-link:hover{ opacity:1; transform:translateY(-1px); }
+  .platform-logo-link img{ height:28px; width:auto; display:block; }
 </style>
 </head>
 <body>
@@ -178,11 +270,7 @@
     <span style="font-size:0.78rem; color:var(--slate-light); font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:0.08em;">Étapes :</span>
     <a href="#etape-1" style="font-size:0.85rem; color:var(--signal); font-weight:500;">1 — Agent IA · Étude de marché</a>
     <span style="color:var(--line);">·</span>
-    <span style="font-size:0.85rem; color:var(--slate-light);">2 — Charte graphique <em>(à venir)</em></span>
-    <span style="color:var(--line);">·</span>
-    <span style="font-size:0.85rem; color:var(--slate-light);">3 — Photos &amp; vidéo <em>(à venir)</em></span>
-    <span style="color:var(--line);">·</span>
-    <span style="font-size:0.85rem; color:var(--slate-light);">4 — Lancement plateformes <em>(à venir)</em></span>
+    <a href="#etape-2" style="font-size:0.85rem; color:var(--signal); font-weight:500;">2 — Photos &amp; vidéo pro · Montage IA</a>
   </div>
 </div>
 
@@ -192,7 +280,7 @@
 <div id="etape-1">
   <div class="wrap" style="padding-top:4rem; padding-bottom:5rem;">
 
-    <div class="step-label">Étape 1 sur 4</div>
+    <div class="step-label">Étape 1 sur 2</div>
     <p class="eyebrow" style="margin-top:0.3rem;">Agent IA · Étude de marché &amp; positionnement tarifaire</p>
     <h2 style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-top:1rem; max-width:620px;">
       Fixer son prix de lancement sur des données réelles, pas au doigt mouillé.
@@ -239,11 +327,101 @@
     <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--line);">
       <p class="step-label">Prochaine étape</p>
       <p style="font-size:0.95rem; color:var(--slate); margin-top:0.3rem;">
-        Étape 2 — Charte graphique &amp; identité visuelle · <em>En cours</em>
+        Étape 2 — Photos &amp; vidéo pro · Montage IA · <em>En cours</em>
       </p>
     </div>
 
   </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ÉTAPE 2 — PHOTOS & VIDÉO PRO · MONTAGE IA
+     ════════════════════════════════════════════ -->
+<div id="etape-2" style="border-top:1px solid var(--line);">
+  <div class="wrap" style="padding-top:4rem; padding-bottom:5rem;">
+
+    <div class="step-label">Étape 2 sur 2</div>
+    <p class="eyebrow" style="margin-top:0.3rem;">Photos &amp; vidéo pro · Montage IA</p>
+    <h2 style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-top:1rem; max-width:620px;">
+      Des visuels qui vendent — avant même la première réservation.
+    </h2>
+
+    <div class="pbl">
+      <p><span>Problème —</span> des photos de téléphone face à des concurrents avec des visuels pro. Sur Airbnb, le premier clic se décide à l'image. Une annonce sans visuels accrocheurs ne convertit pas, quelle que soit la qualité réelle du logement.</p>
+      <p><span>Solution —</span> shooting photo professionnel sur place, retouche et montage IA, visuels formatés pour chaque plateforme (Airbnb, Rentanoo, réseaux sociaux). Vidéo de présentation courte pour capter l'attention en scroll.</p>
+      <p><span>Résultat —</span> 6 visuels de campagne prêts à publier + 1 vidéo diffusée sur YouTube. L'appartement se présente à la hauteur de sa qualité réelle.</p>
+    </div>
+
+    <!-- ── Carrousel ── -->
+    <div style="margin-top:2.4rem;">
+      <p class="step-label">Livrables — Visuels de campagne</p>
+      <div class="carousel-outer" style="margin-top:1.2rem;">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide" onclick="openLightbox(0)">
+              <img src="/images/dimore-1.webp" alt="Piscine · Ton appart neuf à Madirokely" loading="lazy">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox(1)">
+              <img src="/images/dimore-2.webp" alt="Chambre · Neuf, propre, tout équipé — 45 m²" loading="lazy">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox(2)">
+              <img src="/images/dimore-3.webp" alt="Piscine · Du wifi qui marche. Vraiment." loading="lazy">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox(3)">
+              <img src="/images/dimore-4.webp" alt="Chambre · La clim tourne sans coupure" loading="lazy">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox(4)">
+              <img src="/images/dimore-5.webp" alt="Piscine 11 m · plage à 5 min" loading="lazy">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox(5)">
+              <img src="/images/dimore-6.webp" alt="Dès 45 €/nuit · Réservation Rentanoo" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Photo précédente">&#8249;</button>
+        <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Photo suivante">&#8250;</button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Photo 1"></button>
+          <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Photo 2"></button>
+          <button class="carousel-dot" onclick="goToSlide(2)" aria-label="Photo 3"></button>
+          <button class="carousel-dot" onclick="goToSlide(3)" aria-label="Photo 4"></button>
+          <button class="carousel-dot" onclick="goToSlide(4)" aria-label="Photo 5"></button>
+          <button class="carousel-dot" onclick="goToSlide(5)" aria-label="Photo 6"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Logos plateformes ── -->
+    <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--line);">
+      <p class="step-label">Voir les annonces en ligne</p>
+      <div class="platform-logos">
+        <a href="https://youtube.com/shorts/R8eUFUHUhbo?si=kC_oIBhY9fYtDxI4"
+           target="_blank" rel="noopener"
+           class="platform-logo-link" aria-label="Voir la vidéo sur YouTube">
+          <img src="/images/logo-youtube.webp" alt="YouTube">
+        </a>
+        <a href="https://www.airbnb.fr/rooms/1724514033331713068?guests=1&adults=1&s=67&unique_share_id=829d08ff-2dc6-4a3b-8fc2-bc5dbde75582"
+           target="_blank" rel="noopener"
+           class="platform-logo-link" aria-label="Voir l'annonce Airbnb">
+          <img src="/images/logo-airbnb.webp" alt="Airbnb">
+        </a>
+        <a href="https://rentanoo.com/hebergement/D3C8CDA7"
+           target="_blank" rel="noopener"
+           class="platform-logo-link" aria-label="Voir l'annonce Rentanoo">
+          <img src="/images/logo-rentanoo.webp" alt="Rentanoo">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Lightbox ── -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Fermer">&#10005;</button>
+  <button class="lb-arrow lb-prev" onclick="event.stopPropagation(); lbMove(-1)" aria-label="Précédent">&#8249;</button>
+  <img id="lbImg" class="lb-img" src="" alt="" onclick="event.stopPropagation()">
+  <button class="lb-arrow lb-next" onclick="event.stopPropagation(); lbMove(1)" aria-label="Suivant">&#8250;</button>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -257,5 +435,82 @@
   </div>
 </footer>
 
+<script>
+  // ── Carousel ──────────────────────────────────────────
+  var cIdx = 0;
+  var cTrack = document.getElementById('carouselTrack');
+  var cSlides = cTrack ? cTrack.querySelectorAll('.carousel-slide') : [];
+  var cDots = document.querySelectorAll('.carousel-dot');
+
+  function getVisible(){ return window.innerWidth >= 640 ? 3 : 1; }
+
+  function updateCarousel(){
+    var vp = cTrack.parentElement;
+    var slideW = cSlides.length ? (vp.offsetWidth - (getVisible()-1)*16) / getVisible() : 0;
+    cTrack.style.transform = 'translateX(-' + (cIdx * (slideW + 16)) + 'px)';
+    cDots.forEach(function(d,i){ d.classList.toggle('active', i === cIdx); });
+  }
+
+  function moveCarousel(dir){
+    var max = Math.max(0, cSlides.length - getVisible());
+    cIdx = Math.max(0, Math.min(cIdx + dir, max));
+    updateCarousel();
+  }
+
+  function goToSlide(i){
+    var max = Math.max(0, cSlides.length - getVisible());
+    cIdx = Math.max(0, Math.min(i, max));
+    updateCarousel();
+  }
+
+  window.addEventListener('resize', updateCarousel);
+
+  // Touch swipe
+  var tsX = null;
+  if(cTrack){
+    cTrack.addEventListener('touchstart', function(e){ tsX = e.touches[0].clientX; }, {passive:true});
+    cTrack.addEventListener('touchend', function(e){
+      if(tsX === null) return;
+      var dx = tsX - e.changedTouches[0].clientX;
+      if(Math.abs(dx) > 40) moveCarousel(dx > 0 ? 1 : -1);
+      tsX = null;
+    });
+  }
+
+  // ── Lightbox ──────────────────────────────────────────
+  var lbPhotos = Array.from(cSlides).map(function(s){
+    var img = s.querySelector('img');
+    return { src: img.src, alt: img.alt };
+  });
+  var lbIdx = 0;
+
+  function openLightbox(i){
+    lbIdx = i;
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lbImg');
+    img.src = lbPhotos[i].src;
+    img.alt = lbPhotos[i].alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbMove(dir){
+    lbIdx = (lbIdx + dir + lbPhotos.length) % lbPhotos.length;
+    document.getElementById('lbImg').src = lbPhotos[lbIdx].src;
+    document.getElementById('lbImg').alt = lbPhotos[lbIdx].alt;
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(!document.getElementById('lightbox').classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') lbMove(-1);
+    if(e.key === 'ArrowRight') lbMove(1);
+  });
+</script>
 </body>
 </html>
